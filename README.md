@@ -1,3 +1,41 @@
+##Commands:
+ng new ecomapp --routing true --style css --skip-git --skip-tests
+cd ecomapp
+npm install bootstrap@next
+npm install @fortawesome/fontawesome-free@5.12.1
+npm install --save-dev json-server@0.16.0
+npm install --save-dev jsonwebtoken@8.5.1
+
+Adding CSS and JS to the angular.json File
+"styles": [
+    "src/styles.css",
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+],
+"scripts": [
+    "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+]
+
+Adding a Script in the package.json
+"scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "json": "json-server data.js -p 3500 -m authMiddleware.js"
+}
+
+add data.js and authMiddleware.js on ecomapp folder
+
+ng serve --open
+http://localhost:4200
+
+npm run json
+http://localhost:3500/products/1
+
+
 # Ecomapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
