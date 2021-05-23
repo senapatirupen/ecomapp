@@ -35,6 +35,37 @@ http://localhost:4200
 npm run json
 http://localhost:3500/products/1
 
+## Run on debug mode
+Step 1: Install the Debugger for Chrome extension in VS Code
+Step 2: Go to Settings and then make "debug.javascript.usePreview": false
+Step 3: Set the "sourceMap" property to "true" in angular.json
+Step 4: Set breakpoints in the editor.
+Step 5: click on lunch and debug icon then
+Step 6: create launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}",
+            "runtimeExecutable": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+        },
+        {
+            "type": "pwa-chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+
+Step 7: Launch the Angular app separate from the debugger (such as by running “ng serve” from the command line with port 4200).
+Step 8: Run the VS Code debugger “launch” job against the app (by clicking the green arrow in the Debug view).
+Step 9: A new browser window will open for debugging purpose
 
 # Ecomapp
 
